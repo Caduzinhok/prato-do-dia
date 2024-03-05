@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import { Search } from 'lucide-react'
 import { FormEvent, use, useState } from "react";
 import { receitas } from "./data/recipe";
@@ -18,45 +17,44 @@ export default function Home() {
 
       <img src="/background-logo.jpg" alt="Background Plate Logo" className="w-full h-full" />
 
-      <div className="flex flex-col bg-slate-100 py-10 px-2 md:py-20 md:px-10 items-center">
+      <div className="flex flex-col bg-slate-100 pt-10 px-2 md:pt-20 pb-10 md:px-10 items-center">
         <h1 className="text-5xl md:text-7xl text-red-700">
           Prato do Dia
         </h1>
 
-        <form className="w-full py-4 md:py-12" onSubmit={event => handleSubmit(event)}>
-          <div className="flex justify-between border-2 rounded-r-2xl bg-white border-red-500 focus:border-red-700 focus:border-4">
+        <form className="w-full py-2 md:pt-12 md:pb-4" onSubmit={event => handleSubmit(event)}>
+          <div className="flex justify-between border-4 rounded-r-2xl bg-white border-red-600 focus:border-red-700 focus:border-4">
             <input
               type="text"
               className="pl-4 h-16 w-full text-slate-800 font-semibold  outline-none"
               value={inputSearch}
               onChange={(event) => setInputSearch(event.target.value)}
             />
-            <button className="flex items-center" type="submit">
-              <Search className="size-10 mr-4 text-slate-600 hover:text-slate-800" />
+            <button className="flex items-center justify-center bg-red-600 rounded-r-xl w-16 min-h-full" type="submit">
+              <Search className="size-10 text-white hover:text-slate-200" />
             </button>
           </div>
         </form>
 
         {isSearchingRecipe &&
           (
-            <ul className="w-full flex items-start flex-col rounded-sm max-h-screen overflow-scroll gap-2 p-2">
-                {receitas.map((receita) => {
-                  return (
-                    <li key={receita.id} className="flex items-start min-h-32 max-w-full h-full overflow-hidden">
-                      <img src={receita.image} alt={receita.titulo} className="min-w-32 max-h-full h-full" />
-                      <div className="px-4">
-                      <h3 className="text-xl">
+            <ul className="flex items-start flex-col max-h-screen p-2 overflow-y-scroll scrollbar-hide border-4 border-red-600 rounded-md gap-4">
+              {receitas.map((receita) => {
+                return (
+                  <li key={receita.id} className="flex items-center h-full ">
+                    <img src={receita.image} alt={receita.titulo} className="min-w-24 h-24 rounded-full" />
+                    <div className="mx-4 py-2 border-b-2 border-red-800">
+                      <h3 className="text-2xl overflow-hidden pb-1">
                         {receita.titulo}
                       </h3>
-                      <p className="text-md tracking-tight text-slate-600 pl-2 text-justify text-ellipsis">
-                      {receita.instrucoes.join(' ')}
+                      <p className="text-sm tracking-tight text-slate-600 text-justify max-h-24 overflow-hidden">
+                        {receita.instrucoes.join(' ')}
                       </p>
-                      </div>                       
-                    </li>
-                  )
-                })}
+                    </div>
+                  </li>
+                )
+              })}
             </ul>
-
           )}
       </div>
     </div>
