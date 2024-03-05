@@ -16,7 +16,6 @@ const config: Config = {
     },
   },
   plugins: [
-    require('autoprefixer'),
-  ],
+  ]
 };
 export default config;

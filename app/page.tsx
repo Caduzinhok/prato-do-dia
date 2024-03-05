@@ -1,7 +1,8 @@
 "use client"
 import { Search } from 'lucide-react'
-import { FormEvent, use, useState } from "react";
+import { FormEvent, useState } from "react";
 import { receitas } from "./data/recipe";
+import { LogoChef } from './assets/logoChef';
 
 export default function Home() {
   const [inputSearch, setInputSearch] = useState("")
@@ -17,12 +18,15 @@ export default function Home() {
 
       <img src="/background-logo.jpg" alt="Background Plate Logo" className="w-full h-full" />
 
-      <div className="flex flex-col bg-slate-100 pt-10 px-2 md:pt-20 pb-10 md:px-10 items-center">
-        <h1 className="text-5xl md:text-7xl text-red-700">
-          Prato do Dia
-        </h1>
+      <div className="flex flex-col bg-slate-100 pt-4 px-2 md:pt-20 md:px-10 items-center">
+        <div className='flex items-center gap-3'>
+          <LogoChef />
+          <h1 className="text-5xl md:text-7xl text-red-700">
+            Prato do Dia
+          </h1>
+        </div>
 
-        <form className="w-full py-2 md:pt-12 md:pb-4" onSubmit={event => handleSubmit(event)}>
+        <form className="w-full md:pt-12" onSubmit={event => handleSubmit(event)}>
           <div className="flex justify-between border-4 rounded-r-2xl bg-white border-red-600 focus:border-red-700 focus:border-4">
             <input
               type="text"
@@ -35,13 +39,16 @@ export default function Home() {
             </button>
           </div>
         </form>
+        <div className='flex w-full justify-end py-2'>
+          <p>Quer sugerir uma receita? <a href="#" className='text-red-500 underline hover:text-red-700'>Clique Aqui</a></p>
+        </div>
 
         {isSearchingRecipe &&
           (
-            <ul className="flex items-start flex-col max-h-screen p-2 overflow-y-scroll scrollbar-hide border-4 border-red-600 rounded-md gap-4">
+            <ul className="no-scrollbar flex items-start flex-col max-h-screen p-2 overflow-y-scroll border-2 border-slate-300 rounded-md gap-4">
               {receitas.map((receita) => {
                 return (
-                  <li key={receita.id} className="flex items-center h-full ">
+                  <li key={receita.id} className="item-recipe flex items-center h-full ">
                     <img src={receita.image} alt={receita.titulo} className="min-w-24 h-24 rounded-full" />
                     <div className="mx-4 py-2 border-b-2 border-red-800">
                       <h3 className="text-2xl overflow-hidden pb-1">

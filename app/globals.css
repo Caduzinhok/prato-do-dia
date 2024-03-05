@@ -2,5 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    
+    /* Padding bottom on last child on list of lis */
+    .item-recipe:last-child { 
+        padding-bottom: 1.25rem;
+    }
 }
