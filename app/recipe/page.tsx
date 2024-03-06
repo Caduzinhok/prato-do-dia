@@ -1,5 +1,16 @@
-export default function Page(){
+export default function AboutPage({receita } : {
+    receita: {
+        id: number;
+        image: string;
+        titulo: string;
+        categoria: string;
+        dificuldade: string;
+        tempoPreparo: string;
+        ingredientes: string[];
+        instrucoes: string[];
+    }
+}){
     return(
-        <h1>Pagina de Receita</h1>
+        <h1>{receita && receita.titulo}</h1>
     )
 } 

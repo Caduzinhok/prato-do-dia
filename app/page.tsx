@@ -3,6 +3,7 @@ import { Search } from 'lucide-react'
 import { FormEvent, useState } from "react";
 import { receitas } from "./data/recipe";
 import { LogoChef } from './assets/logoChef';
+import Link from 'next/link';
 
 export default function Home() {
   const [inputSearch, setInputSearch] = useState("")
@@ -48,7 +49,25 @@ export default function Home() {
             <ul className="no-scrollbar flex items-start flex-col max-h-screen p-2 overflow-y-scroll border-2 border-slate-300 rounded-md gap-4">
               {receitas.map((receita) => {
                 return (
-                  <li key={receita.id} className="item-recipe flex items-center h-full ">
+                  <Link 
+                  href={
+                    {
+                      pathname:'/recipe',
+                      query: {
+                        id: receita.id,
+                        image: receita.image,
+                        titulo: receita.titulo,
+                        categoria: receita.categoria,
+                        dificuldade: receita.dificuldade,
+                        tempoPreparo: receita.tempoPreparo,
+                        ingredientes: receita.ingredientes,
+                        instrucoes: receita.instrucoes
+                      }
+                    }
+                  }
+                  key={receita.id}
+                  >
+                  <li  className="item-recipe flex items-center h-full ">
                     <img src={receita.image} alt={receita.titulo} className="min-w-24 h-24 rounded-full" />
                     <div className="mx-4 py-2 border-b-2 border-red-800">
                       <h3 className="text-2xl overflow-hidden pb-1">
@@ -59,6 +78,7 @@ export default function Home() {
                       </p>
                     </div>
                   </li>
+                  </Link>
                 )
               })}
             </ul>
