@@ -1,6 +1,10 @@
-export function LogoChef() {
+interface PropsLogo {
+    width: number
+    height: number
+}
+export function LogoChef(PropsLogo: PropsLogo) {
     return (
-        <svg width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg width={PropsLogo.width} height={PropsLogo.height}viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <rect width="50" height="50" fill="url(#pattern0)" />
             <defs>
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">

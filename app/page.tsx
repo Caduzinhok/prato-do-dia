@@ -21,7 +21,7 @@ export default function Home() {
 
       <div className="flex flex-col bg-slate-100 pt-4 px-2 md:pt-20 md:px-10 items-center">
         <div className='flex items-center gap-3'>
-          <LogoChef />
+          <LogoChef width={80} height={80}/>
           <h1 className="text-5xl md:text-7xl text-red-700">
             Prato do Dia
           </h1>
