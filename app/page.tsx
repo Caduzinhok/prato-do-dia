@@ -77,7 +77,7 @@ export default function Home() {
                   }
                   key={receita.id}
                 >
-                  <li className="item-recipe flex items-center h-full ">
+                  <li className="item-recipe flex items-center h-full px-2">
                     <img src={receita.image} alt={receita.titulo} className="min-w-24 h-24 rounded-full" />
                     <div className="mx-4 py-2 border-b-2 border-red-800">
                       <h3 className="text-2xl overflow-hidden pb-1">
