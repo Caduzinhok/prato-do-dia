@@ -1,6 +1,6 @@
 "use-client"
-import { Navbar } from "../navbar";
-import { Recipe } from "./recipe";
+import { Navbar } from "../components/navbar";
+import { Recipe } from "../components/recipe";
 
 export default function AboutPage({ searchParams }: {
     searchParams: {
@@ -16,7 +16,7 @@ export default function AboutPage({ searchParams }: {
 }) {
     return (
         <div className="flex justify-center">
-            <div className=" max-w-6xl w-full">
+            <div className=" max-w-screen-xl w-full">
                 <Navbar />
 
                 {searchParams?.id &&
