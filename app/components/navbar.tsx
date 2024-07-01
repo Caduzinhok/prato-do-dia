@@ -1,5 +1,8 @@
+"use client"
 import Link from "next/link";
 import { LogoChef } from "../assets/logoChef";
+import { LogoName } from "../assets/logoName";
+import { SearchBarr } from "./searchbarr";
 
 export function Navbar() {
     return (
@@ -7,16 +10,12 @@ export function Navbar() {
             <div className="py-4 px-4 flex justify-between">
                 <div className="flex items-center gap-2">
                     <LogoChef width={60} height={60} />
-                    <Link href={{
+                    <Link className="pl-2" href={{
                         pathname: '/'
                     }}>
-                        <h1 className="text-5xl text-red-700 font-bold">
-                            Prato do Dia
-                        </h1>
+                        <LogoName width={240} height={50}/>
                     </Link>
                 </div>
-
-
             </div>
         </nav>
     )

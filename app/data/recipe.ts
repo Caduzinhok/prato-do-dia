@@ -87,7 +87,7 @@ export const receitas = [
         ],
         instrucoes: [
           'Em uma panela grande, refogue a cebola e o alho até ficarem dourados.',
-          'Adicione a abóbora, a batata-doce, o caldo de vegetais, o curry em pó, o sal e a pimenta.',
+          ' Adicione a abóbora, a batata-doce, o caldo de vegetais, o curry em pó, o sal e a pimenta.',
           'Cozinhe até que os vegetais estejam macios.',
           'Use um liquidificador para triturar a sopa até obter uma consistência cremosa.',
           'Sirva quente, com uma colher de creme de leite se desejar.'

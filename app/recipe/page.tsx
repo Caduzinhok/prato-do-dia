@@ -1,9 +1,10 @@
-"use-client"
+"use client"
 import { Navbar } from "../components/navbar";
 import { Recipe } from "../components/recipe";
 
 export default function AboutPage({ searchParams }: {
     searchParams: {
+
         id: number;
         image: string;
         titulo: string;
@@ -15,7 +16,7 @@ export default function AboutPage({ searchParams }: {
     }
 }) {
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center max-h-screen">
             <div className=" max-w-screen-xl w-full">
                 <Navbar />
 

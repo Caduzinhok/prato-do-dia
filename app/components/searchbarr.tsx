@@ -1,5 +1,5 @@
+"use client"
 import { Search } from "lucide-react"
-
 interface SearchBarrProps{
     handleSubmit: Function
     inputSearch: string

@@ -1,3 +1,4 @@
+"use client"
 import { MessageCircleX } from "lucide-react";
 
 export function EmptySearch() {

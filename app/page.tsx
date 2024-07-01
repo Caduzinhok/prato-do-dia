@@ -1,16 +1,17 @@
-"use client"
-import { Search } from 'lucide-react'
+"use client";
 import { FormEvent, useState } from "react";
 import { receitas } from "./data/recipe";
 import { LogoChef } from './assets/logoChef';
 import Link from 'next/link';
 import { EmptySearch } from './utils/emptysearch';
 import { SearchBarr } from './components/searchbarr';
+import { LogoName } from './assets/logoName';
 
 export default function Home() {
   const [inputSearch, setInputSearch] = useState("")
   const [isNoResults, setIsNoResults] = useState(false)
   const [arrReceitas, setArrReceitas] = useState(receitas)
+
   function handleSubmit(event: FormEvent) {
     event?.preventDefault()
     setArrReceitas(receitas)
@@ -23,22 +24,20 @@ export default function Home() {
         value.ingredientes.join(' ').toUpperCase().includes(inputSearch.toUpperCase())
       )
     }))
-    console.log("here")
     const isEmpty = arrReceitas.length == 0 ? true : false    
     setIsNoResults(isEmpty)
     setInputSearch('')
   }
+  
   return (
-    <div className="max-w-screen w-screen max-h-screen h-screen grid grid-flow-row grid-rows-3 md:grid-flow-col md:grid-cols-2 md:grid-rows-1">
+    <div className="max-w-screen max-h-screen w-screen h-screen grid grid-flow-row grid-rows-3 md:grid-flow-col md:grid-cols-2 md:grid-rows-1">
 
       <img src="/background-logo.jpg" alt="Background Plate Logo" className="w-full h-full" />
 
       <div className="flex flex-col bg-slate-100 pt-4 px-2 md:pt-20 md:px-10 items-center">
         <div className='flex items-center gap-3'>
           <LogoChef width={80} height={80} />
-          <h1 className="text-5xl md:text-7xl text-red-700 font-bold">
-            Prato do Dia
-          </h1>
+          <LogoName width={240} height={50}/>
         </div>
 
         <SearchBarr

@@ -1,3 +1,4 @@
+
 interface PropsLogo {
     width: number
     height: number
