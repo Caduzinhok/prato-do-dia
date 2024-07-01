@@ -15,8 +15,8 @@ interface PropsRecipe {
 
 export function Recipe(PropsRecipe: PropsRecipe) {
     return (
-        <main className="flex items-center justify-between w-full h-full shadow-xl">
-            <div className="grid grid-cols-2 w-full items-start p-8">
+        <main className="flex items-start justify-between w-full max-h-[calc(100vh - 92px)] shadow-xl p-4">
+            <div className="grid grid-cols-2 w-full items-start p-2 h-full">
                 <div className="flex items-center justify-center flex-col flex-wrap gap-4 px-24">
                     <img src={PropsRecipe.image} alt="Image Recipe" className="w-full h-64 rounded-lg" />
                     <div className="flex justify-between w-full">
@@ -60,7 +60,6 @@ export function Recipe(PropsRecipe: PropsRecipe) {
                                     </li>
                                 )
                             })}
-
                         </ul>
                     </div>
                 </div>
